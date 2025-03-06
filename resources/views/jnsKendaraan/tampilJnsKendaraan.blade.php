@@ -1,5 +1,5 @@
 <a href="{{route('jnsKendaraan.create')}}">
-    <input type="text">
+    <input type="button" value="tambah">
 </a>
 <table border='1'>
     <tr>
@@ -12,7 +12,10 @@
     <tr>
         <td>{{$no++}}</td>
         <td>{{$row->nm_jns_kendaraan}}</td>
-        <td>hapus | delete</td>
+        <td>
+            <a href="{{route('jnsKendaraan.edit',$row->id)}}">update</a>
+            <a href="{{route('jnsKendaraan.delete',$row->id)}}">delete</a>
+        </td>
     </tr>
     @endforeach
 </table>

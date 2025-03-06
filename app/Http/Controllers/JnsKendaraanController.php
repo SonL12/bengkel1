@@ -30,19 +30,11 @@ class JnsKendaraanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //untuk menyimpan
         $data = new jnsKendaraan();
         $data->nm_jns_kendaraan = $request->jns_kendaraan;
         $post = $data->save();
-        return redirect('jnsKendaraan.index');
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
+        return redirect('jnskendaraan');
     }
 
     /**
@@ -51,6 +43,8 @@ class JnsKendaraanController extends Controller
     public function edit(string $id)
     {
         //
+        $data = jnsKendaraan::where('id', '=', $id)->get();
+        return view('jnsKendaraan.updateJnsKendaraan', compact('data', 'id'));
     }
 
     /**
@@ -59,6 +53,11 @@ class JnsKendaraanController extends Controller
     public function update(Request $request, string $id)
     {
         //
+        $data = jnsKendaraan::where('id', '=', $id);
+        $data->update([
+            'nm_jns_kendaraan' => $request->jns_kendaraan,
+        ]);
+        return redirect('jnskendaraan');
     }
 
     /**
@@ -67,5 +66,8 @@ class JnsKendaraanController extends Controller
     public function destroy(string $id)
     {
         //
+        $data = jnsKendaraan::where('id', '=', $id);
+        $data->delete();
+        return redirect('jnskendaraan');
     }
 }
