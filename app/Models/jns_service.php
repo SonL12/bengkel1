@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class jns_service extends Model
 {
     use HasFactory;
+    protected $table = 'jns_services';
+
+    protected $fillable = [
+        'id',
+        'jns_service',
+        'keterangan',
+    ];
 }

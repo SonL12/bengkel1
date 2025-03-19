@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DetailServicesController;
 use App\Http\Controllers\JnsKendaraanController;
 use Illuminate\Support\Facades\Route;
 
@@ -15,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('dashboard');
+    return view('detailServices.test');
 });
 
 //Route jnskendaraan
@@ -25,4 +26,10 @@ Route::post('/jnskendaraan/add', [JnsKendaraanController::class, 'store'])->name
 Route::get('/jnskendaraan/edit/{id}', [JnsKendaraanController::class, 'edit'])->name('jnsKendaraan.edit');
 Route::post('/jnskendaraan/edit/{id}', [JnsKendaraanController::class, 'update'])->name('jnsKendaraan.update');
 Route::get('/jnskendaraan/delete/{id}', [JnsKendaraanController::class, 'destroy'])->name('jnsKendaraan.delete');
-
+//Route detail_services
+Route::get('/detailservices', [DetailServicesController::class, 'index'])->name('detailServices.index');
+Route::get('/detailservices/add', [DetailServicesController::class, 'create'])->name('detailServices.create');
+Route::post('/detailservices/add', [DetailServicesController::class, 'store'])->name('detailServices.store');
+Route::get('/detailservices/edit/{id}', [DetailServicesController::class, 'edit'])->name('detailServices.edit');
+Route::post('/detailservices/edit/{id}', [DetailServicesController::class, 'update'])->name('detailServices.update');
+Route::get('/detailservices/delete/{id}', [DetailServicesController::class, 'destroy'])->name('detailServices.delete');
