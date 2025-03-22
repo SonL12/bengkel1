@@ -75,7 +75,7 @@
       </main>
       <!--end::App Main-->
       <!--begin::Footer-->
-      @include('layout.bebas')
+      @include('layout.paw')
       <!--end::Footer-->
     </div>
-    @include('layout.footer')
+    @include('layout.scripts')

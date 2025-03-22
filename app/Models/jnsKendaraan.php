@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class jnsKendaraan extends Model
+class JnsKendaraan extends Model
 {
     use HasFactory;
     protected $table = 'jns_kendaraan';

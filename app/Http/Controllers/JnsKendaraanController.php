@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\jnsKendaraan;
+use App\Models\JnsKendaraan;
 use Illuminate\Http\Request;
 
 class JnsKendaraanController extends Controller
@@ -12,7 +12,7 @@ class JnsKendaraanController extends Controller
      */
     public function index()
     {
-        $data = jnsKendaraan::get();
+        $data = JnsKendaraan::get();
         return view('jnsKendaraan.tampilJnsKendaraan', compact('data'));
     }
 
@@ -31,9 +31,9 @@ class JnsKendaraanController extends Controller
     public function store(Request $request)
     {
         //untuk menyimpan
-        $data = new jnsKendaraan();
-        $data->nm_jns_kendaraan = $request->jns_kendaraan;
-        $post = $data->save();
+        $data = new JnsKendaraan();
+        $data->nm_jns_kendaraan = $request->nm_jns_kendaraan;
+        $data->save();
         return redirect('jnskendaraan');
     }
 
@@ -43,8 +43,8 @@ class JnsKendaraanController extends Controller
     public function edit(string $id)
     {
         //
-        $data = jnsKendaraan::where('id', '=', $id)->get();
-        return view('jnsKendaraan.updateJnsKendaraan', compact('data', 'id'));
+        $data = JnsKendaraan::where('id', '=', $id)->get();
+        return view('jnsKendaraan.editJnsKendaraan', compact('data', 'id'));
     }
 
     /**
@@ -53,9 +53,9 @@ class JnsKendaraanController extends Controller
     public function update(Request $request, string $id)
     {
         //
-        $data = jnsKendaraan::where('id', '=', $id);
+        $data = JnsKendaraan::where('id', '=', $id);
         $data->update([
-            'nm_jns_kendaraan' => $request->jns_kendaraan,
+            'nm_jns_kendaraan' => $request->nm_jns_kendaraan,
         ]);
         return redirect('jnskendaraan');
     }

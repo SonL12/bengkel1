@@ -45,8 +45,8 @@
                                 <div class="card-body">
                                     <div class="mb-3">
                                         <label class="form-label">Nama Jenis Kendaraan</label>
-                                        <input type="text" class="form-control" name="jns_kendaraan"
-                                            placeholder="Masukkan Nama Jenis Kendaraan" 
+                                        <input type="text" class="form-control" name="nm_jns_kendaraan"
+                                            placeholder="Masukkan Nama Jenis Kendaraan"
                                         />
                                     </div>
                                 </div>
