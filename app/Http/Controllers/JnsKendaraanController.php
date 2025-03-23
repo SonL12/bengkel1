@@ -66,7 +66,7 @@ class JnsKendaraanController extends Controller
     public function destroy(string $id)
     {
         //
-        $data = jnsKendaraan::where('id', '=', $id);
+        $data = JnsKendaraan::where('id', '=', $id);
         $data->delete();
         return redirect('jnskendaraan');
     }

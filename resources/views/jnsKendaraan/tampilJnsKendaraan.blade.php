@@ -58,8 +58,7 @@
                                                 <td>{{ $loop->iteration }}</td>
                                                 <td>{{ $row->nm_jns_kendaraan }}</td>
                                                 <td>
-                                                    <a href="{{ route('jnsKendaraan.edit', $row->id) }}" class="btn btn-warning">Edit</a>  
-                                                    <span class="separator"></span>
+                                                    <a href="{{ route('jnsKendaraan.edit', $row->id) }}" class="btn btn-warning">Edit</a>
                                                     <a href="{{ route('jnsKendaraan.delete', $row->id) }}" class="btn btn-danger">Delete</a>
                                                 </td>
                                             </tr>
