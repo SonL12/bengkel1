@@ -46,7 +46,7 @@ class DetailServicesController extends Controller
     {
         //
         $data = DetailServices::where('id', '=', $id)->get();
-        return view('detailServices.updateDetailServices', compact('data', 'id'));
+        return view('detailServices.editDetailServices', compact('data', 'id'));
     }
 
     /**

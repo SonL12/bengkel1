@@ -26,6 +26,7 @@ Route::post('/jnskendaraan/add', [JnsKendaraanController::class, 'store'])->name
 Route::get('/jnskendaraan/edit/{id}', [JnsKendaraanController::class, 'edit'])->name('jnsKendaraan.edit');
 Route::post('/jnskendaraan/edit/{id}', [JnsKendaraanController::class, 'update'])->name('jnsKendaraan.update');
 Route::get('/jnskendaraan/delete/{id}', [JnsKendaraanController::class, 'destroy'])->name('jnsKendaraan.delete');
+
 //Route detail_services
 Route::get('/detailservices', [DetailServicesController::class, 'index'])->name('detailServices.index');
 Route::get('/detailservices/add', [DetailServicesController::class, 'create'])->name('detailServices.create');

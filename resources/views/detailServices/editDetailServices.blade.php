@@ -19,7 +19,7 @@
                         <ol class="breadcrumb float-sm-end">
                             <li class="breadcrumb-item"><a href="#">Home</a></li>
                             <li class="breadcrumb-item active" aria-current="page">Detail Services</li>
-                            <li class="breadcrumb-item active" aria-current="page">Add</li>
+                            <li class="breadcrumb-item active" aria-current="page">Edit</li>
                         </ol>
                     </div>
                 </div>
@@ -36,33 +36,35 @@
                         <div class="card card-primary card-outline mb-4">
                             <!--begin::Header-->
                             <div class="card-header">
-                                <div class="card-title">Masukkan data bro!</div>
+                                <div class="card-title">Edit Detail Services</div>
                             </div>
                             <!--end::Header-->
                             <!--begin::Form-->
-                            <form action="{{ route('detailServices.store') }}" method="post">
-                                <!--begin::Body-->
-                                @csrf
-                                <div class="card-body">
-                                    <div class="mb-3">
-                                        <label class="form-label">Sparepart</label>
-                                        <input type="text" class="form-control" name="sparepart"
-                                            placeholder="Masukkan Sparepart"
-                                        />
-                                        <label class="form-label mt-2">Harga</label>
-                                        <input type="text" class="form-control" name="harga"
-                                            placeholder="Masukkan Harga"
-                                        />
+                            @foreach($data as $row)
+                                <form action="{{ route('detailServices.update', $id) }}" method="post">
+                                    <!--begin::Body-->
+                                    @csrf
+                                    <div class="card-body">
+                                        <div class="mb-3">
+                                            <label class="form-label">Sparepart</label>
+                                            <input type="text" class="form-control" name="sparepart"
+                                                value="{{ $row->sparepart }}" 
+                                            />
+                                            <label class="form-label">Harga</label>
+                                            <input type="text" class="form-control" name="harga"
+                                                value="{{ $row->harga }}" 
+                                            />
+                                        </div>
                                     </div>
-                                </div>
-                                <!--end::Body-->
-                                <!--begin::Footer-->
-                                <div class="card-footer">
-                                    <button type="submit" class="btn btn-primary">Save</button>
-                                </div>
-                                <!--end::Footer-->
-                            </form>
-                            <!--end::Form-->
+                                    <!--end::Body-->
+                                    <!--begin::Footer-->
+                                    <div class="card-footer">
+                                        <button type="submit" class="btn btn-primary">Save</button>
+                                    </div>
+                                    <!--end::Footer-->
+                                </form>
+                                <!--end::Form-->
+                            @endforeach
                         </div>
                     </div>
                 </div>
