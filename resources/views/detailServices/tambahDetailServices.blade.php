@@ -44,15 +44,19 @@
                                 <!--begin::Body-->
                                 @csrf
                                 <div class="card-body">
-                                    <div class="mb-3">
-                                        <label class="form-label">Sparepart</label>
-                                        <input type="text" class="form-control" name="sparepart"
-                                            placeholder="Masukkan Sparepart"
-                                        />
-                                        <label class="form-label mt-2">Harga</label>
-                                        <input type="text" class="form-control" name="harga"
-                                            placeholder="Masukkan Harga"
-                                        />
+                                    <div class="row g-3">
+                                        <div class="col-md-6">
+                                            <label class="form-label">Sparepart</label>
+                                            <input type="text" class="form-control" name="sparepart"
+                                                placeholder="Masukkan Sparepart"
+                                            />
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label">Harga</label>
+                                            <input type="text" class="form-control" name="harga"
+                                                placeholder="Masukkan Harga"
+                                            />
+                                        </div>
                                     </div>
                                 </div>
                                 <!--end::Body-->

@@ -54,6 +54,12 @@
                       <p>Detail Services</p>
                     </a>
                   </li>
+                  <li class="nav-item">
+                    <a href="{{ route('kendaraan.index') }}" class="nav-link {{ request()->routeIs('kendaraan.index') ? 'active' : '' }}">
+                      <i class="nav-icon bi bi-circle"></i>
+                      <p>Kendaraan</p>
+                    </a>
+                  </li>
                 </ul>
               </li>
               <li class="nav-item">

@@ -2397,6 +2397,7 @@ textarea.form-control-lg {
 .form-check-input {
   --bs-form-check-bg: var(--bs-body-bg);
   flex-shrink: 0;
+  cursor: pointer;
   width: 1em;
   height: 1em;
   margin-top: 0.25em;

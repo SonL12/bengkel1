@@ -33,15 +33,9 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="card mb-4">
-                            <div class="card-header">
-                                <div class="row">
-                                    <div class="col-11">
-                                        <h3 class="card-title">Data Detail Services</h3>
-                                    </div>
-                                    <div class="col-1 d-flex justify-content-end">
-                                        <a href="{{ route('detailServices.create') }}" class="btn btn-success btn-sm">Add</a>
-                                    </div>
-                                </div>
+                            <div class="card-header d-flex justify-content-between align-items-center">
+                                <h3 class="card-title">Data Detail Services</h3>
+                                <a href="{{ route('detailServices.create') }}" class="btn btn-success btn-sm ms-auto">Add</a>
                             </div>
                             <div class="card-body p-0">
                                 <table class="table table-striped">
@@ -67,6 +61,9 @@
                                         @endforeach
                                     </tbody>
                                 </table>
+                                <div class="d-flex justify-content-end">
+                                    {{ $data->links() }}
+                                </div>
                             </div>
                         </div>
                     </div>

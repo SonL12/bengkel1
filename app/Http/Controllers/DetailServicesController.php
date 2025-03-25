@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\DetailServices;
 use Illuminate\Http\Request;
 
+
 class DetailServicesController extends Controller
 {
     /**
@@ -13,7 +14,8 @@ class DetailServicesController extends Controller
     public function index()
     {
         //
-        $data = DetailServices::get();
+        // $data = DetailServices::get();
+        $data = DetailServices::paginate(10);
         return view('detailServices.tampilDetailServices', compact('data'));
     }
 
