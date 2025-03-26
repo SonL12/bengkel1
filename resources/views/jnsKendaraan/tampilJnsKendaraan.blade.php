@@ -33,15 +33,9 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="card mb-4">
-                            <div class="card-header">
-                                <div class="row">
-                                    <div class="col-11">
-                                        <h3 class="card-title">Data Jenis Kendaraan</h3>
-                                    </div>
-                                    <div class="col-1 d-flex justify-content-end">
-                                        <a href="{{ route('jnsKendaraan.create') }}" class="btn btn-success btn-sm">Add</a>
-                                    </div>
-                                </div>
+                            <div class="card-header d-flex justify-content-between align-items-center">
+                                <h3 class="card-title">Data Jenis Kendaraan</h3>
+                                <a href="{{ route('jnsKendaraan.create') }}" class="btn btn-success btn-sm ms-auto">Add</a>
                             </div>
                             <div class="card-body p-0">
                                 <table class="table table-striped">
@@ -58,14 +52,16 @@
                                                 <td>{{ $loop->iteration }}</td>
                                                 <td>{{ $row->nm_jns_kendaraan }}</td>
                                                 <td>
-                                                    <a href="{{ route('jnsKendaraan.edit', $row->id) }}" class="btn btn-warning">Edit</a>  
-                                                    <span class="separator"></span>
+                                                    <a href="{{ route('jnsKendaraan.edit', $row->id) }}" class="btn btn-warning">Edit</a>
                                                     <a href="{{ route('jnsKendaraan.delete', $row->id) }}" class="btn btn-danger">Delete</a>
                                                 </td>
                                             </tr>
                                         @endforeach
                                     </tbody>
                                 </table>
+                                <div class="d-flex justify-content-end">
+                                    {{ $data->links() }}
+                                </div>
                             </div>
                         </div>
                     </div>

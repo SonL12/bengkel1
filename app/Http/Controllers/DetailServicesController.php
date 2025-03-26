@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\detail_service;
+use App\Models\DetailServices;
 use Illuminate\Http\Request;
+
 
 class DetailServicesController extends Controller
 {
@@ -13,7 +14,8 @@ class DetailServicesController extends Controller
     public function index()
     {
         //
-        $data = detail_service::get();
+        // $data = DetailServices::get();
+        $data = DetailServices::paginate(10);
         return view('detailServices.tampilDetailServices', compact('data'));
     }
 
@@ -32,10 +34,10 @@ class DetailServicesController extends Controller
     public function store(Request $request)
     {
         //
-        $data = new detail_service();
+        $data = new DetailServices();
         $data->sparepart = $request->sparepart;
         $data->harga = $request->harga;
-        $post = $data->save();
+        $data->save();
         return redirect('detailservices');
     }
 
@@ -45,8 +47,8 @@ class DetailServicesController extends Controller
     public function edit(string $id)
     {
         //
-        $data = detail_service::where('id', '=', $id)->get();
-        return view('detailServices.updateDetailServices', compact('data', 'id'));
+        $data = DetailServices::where('id', '=', $id)->get();
+        return view('detailServices.editDetailServices', compact('data', 'id'));
     }
 
     /**
@@ -55,7 +57,7 @@ class DetailServicesController extends Controller
     public function update(Request $request, string $id)
     {
         //
-        $data = detail_service::where('id', '=', $id);
+        $data = DetailServices::where('id', '=', $id);
         $data->update([
             'sparepart' => $request->sparepart,
             'harga' => $request->harga,
@@ -69,7 +71,7 @@ class DetailServicesController extends Controller
     public function destroy(string $id)
     {
         //
-        $data = detail_service::where('id', '=', $id);
+        $data = DetailServices::where('id', '=', $id);
         $data->delete();
         return redirect('detailservices');
     }

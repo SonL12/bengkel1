@@ -12,7 +12,8 @@ class JnsKendaraanController extends Controller
      */
     public function index()
     {
-        $data = JnsKendaraan::get();
+        //
+        $data = JnsKendaraan::paginate(10);
         return view('jnsKendaraan.tampilJnsKendaraan', compact('data'));
     }
 
@@ -66,7 +67,7 @@ class JnsKendaraanController extends Controller
     public function destroy(string $id)
     {
         //
-        $data = jnsKendaraan::where('id', '=', $id);
+        $data = JnsKendaraan::where('id', '=', $id);
         $data->delete();
         return redirect('jnskendaraan');
     }

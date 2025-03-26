@@ -18,7 +18,8 @@
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-end">
                             <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+                            <li class="breadcrumb-item active" aria-current="page">Jenis Kendaraan</li>
+                            <li class="breadcrumb-item active" aria-current="page">Add</li>
                         </ol>
                     </div>
                 </div>
@@ -35,7 +36,7 @@
                         <div class="card card-primary card-outline mb-4">
                             <!--begin::Header-->
                             <div class="card-header">
-                                <div class="card-title">Masukkan data bro!</div>
+                                <div class="card-title">Masukkan Data Jenis Kendaraan</div>
                             </div>
                             <!--end::Header-->
                             <!--begin::Form-->

@@ -5,7 +5,7 @@
           <a href="./index.html" class="brand-link">
             <!--begin::Brand Image-->
             <img
-              src="{{ asset ('assets/assets/img/AdminLTELogo.png')}}"
+              src="{{ asset ('assets/assets/img/AdminLTELogo.png') }}"
               alt="AdminLTE Logo"
               class="brand-image opacity-75 shadow"
             />
@@ -37,21 +37,27 @@
                 </a>
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
-                    <a href="./index.html" class="nav-link active">
+                    <a href="{{ route('home') }}" class="nav-link {{ request()->routeIs('home') ? 'active' : '' }}">
                       <i class="nav-icon bi bi-circle"></i>
-                      <p>Dashboard v1</p>
+                      <p>Home</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="./index2.html" class="nav-link">
+                    <a href="{{ route('jnsKendaraan.index') }}" class="nav-link {{ request()->routeIs('jnsKendaraan.index') ? 'active' : '' }}">
                       <i class="nav-icon bi bi-circle"></i>
-                      <p>Dashboard v2</p>
+                      <p>Jenis Kendaraan</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="./index3.html" class="nav-link">
+                    <a href="{{ route('detailServices.index') }}" class="nav-link {{ request()->routeIs('detailServices.index') ? 'active' : '' }}">
                       <i class="nav-icon bi bi-circle"></i>
-                      <p>Dashboard v3</p>
+                      <p>Detail Services</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="{{ route('kendaraan.index') }}" class="nav-link {{ request()->routeIs('kendaraan.index') ? 'active' : '' }}">
+                      <i class="nav-icon bi bi-circle"></i>
+                      <p>Kendaraan</p>
                     </a>
                   </li>
                 </ul>
