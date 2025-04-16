@@ -3,6 +3,7 @@
 use App\Http\Controllers\DetailServicesController;
 use App\Http\Controllers\JnsKendaraanController;
 use App\Http\Controllers\KendaraanController;
+use App\Http\Controllers\ServiceController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -43,3 +44,11 @@ Route::post('/kendaraan/add', [KendaraanController::class, 'store'])->name('kend
 Route::get('/kendaraan/edit/{id}', [KendaraanController::class, 'edit'])->name('kendaraan.edit');
 Route::post('/kendaraan/edit/{id}', [KendaraanController::class, 'update'])->name('kendaraan.update');
 Route::get('/kendaraan/delete/{id}', [KendaraanController::class, 'destroy'])->name('kendaraan.delete');
+
+//Route Service
+Route::get('/Service', [ServiceController::class, 'index'])->name('Service.index');
+Route::get('/Service/add', [ServiceController::class, 'create'])->name('Service.create');
+Route::post('/Service/add', [ServiceController::class, 'store'])->name('Service.store');
+Route::get('/Service/edit/{id}', [ServiceController::class, 'edit'])->name('Service.edit');
+Route::post('/Service/edit/{id}', [ServiceController::class, 'update'])->name('Service.update');
+Route::get('/Service/delete/{id}', [ServiceController::class, 'destroy'])->name('Service.delete');
