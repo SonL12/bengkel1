@@ -14,11 +14,11 @@
             <div class="container-fluid">
                 <!--begin::Row-->
                 <div class="row">
-                    <div class="col-sm-6"><h3 class="mb-0">JnsService</h3></div>
+                    <div class="col-sm-6"><h3 class="mb-0">Jenis Service</h3></div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-end">
                             <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">JnsService</li>
+                            <li class="breadcrumb-item active" aria-current="page">Jenis Service</li>
                         </ol>
                     </div>
                 </div>
@@ -34,8 +34,8 @@
                     <div class="col-md-12">
                         <div class="card mb-4">
                             <div class="card-header d-flex justify-content-between align-items-center">
-                                <h3 class="card-title mt-1">Data JnsService</h3>
-                                <a href="{{ route('Service.create') }}" class="btn btn-success btn-sm ms-auto">Add</a>
+                                <h3 class="card-title mt-1">Data Jenis Service</h3>
+                                <a href="{{ route('JnsService.create') }}" class="btn btn-success btn-sm ms-auto">Add</a>
                             </div>
                             <div class="card-body p-0">
                                 <table class="table table-striped">
