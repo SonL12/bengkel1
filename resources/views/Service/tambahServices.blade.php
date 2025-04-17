@@ -47,22 +47,22 @@
                                     <div class="row g-3">
                                         <div class="col-md-6">
                                         <label class="form-label">keluhan</label>
-                                                <input type="text" class="form-control" name="keluhan"
-                                                    value="{{ $row->keluhan }}" required
-                                                />
-                                                <div class="invalid-feedback">Apa cerita?</div>
+                                        <input type="text" class="form-control" name="keluhan"
+                                                placeholder="Masukkan Keluhan" required
+                                        />
+                                        <div class="invalid-feedback">Apa cerita?</div>
                                             </div>
                                             <div class="col-md-6">
                                                 <label class="form-label">tanggal masuk</label>
                                                 <input type="text" class="form-control" name="tgl_masuk"
-                                                    value="{{ $row->tgl_masuk }}" required
+                                                    placeholder= "tanggal masuk" required
                                                 />
                                                 <div class="invalid-feedback">kapan masuk bengkel bos?</div>
                                             </div>
                                             <div class="col-md-6">
                                                 <label class="form-label">tanggal keluar</label>
                                                 <input type="text" class="form-control" name="tgl_keluar"
-                                                    value="{{ $row->tgl_keluar }}" required
+                                                    placeholder="tanggal keluar" required
                                                 />
                                                 <div class="invalid-feedback">kapan keluar bengkel bos?</div>
                                             </div>
@@ -103,7 +103,6 @@
                                     <!--end::Script Validation-->
                                 </form>
                                 <!--end::Form-->
-                            @endforeach
                         </div>
                     </div>
                 </div>

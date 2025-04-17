@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Carbon\Laravel\ServiceProvider;
 use Illuminate\Http\Request;
+use App\Models\service;
+
 
 class ServiceController extends Controller
 {
@@ -13,9 +15,9 @@ class ServiceController extends Controller
     public function index()
     {
         //
-        // $data = Services::get();
-        $data = Services::paginate(10);
-        return view('Service.tampilService', compact('data'));
+        $data = service::get();
+        // $data = service::paginate(10);
+        return view('Service.tampilServices', compact('data'));
     }
 
     /**
@@ -24,7 +26,7 @@ class ServiceController extends Controller
     public function create()
     {
         //untuk menampilkan form
-        return view('Service.tambahService');
+        return view('Service.tambahServices');
     }
 
     /**
@@ -33,7 +35,7 @@ class ServiceController extends Controller
     public function store(Request $request)
     {
         //
-        $data = new Service();
+        $data = new service();
         $data->keluhan = $request->keluhan;
         $data->tgl_masuk = $request->tgl_masuk;
         $data->tgl_keluar = $request->tgl_keluar;
@@ -47,21 +49,21 @@ class ServiceController extends Controller
     public function edit(string $id)
     {
         //
-        $data = Service::where('id', '=', $id)->get();
+        $data = service::where('id', '=', $id)->get();
         return view('Service.editService', compact('data', 'id'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function update(string $id)
+    public function update(Request $request, string $id)
     {
         //
-        $data = Service::where('id', '=', $id);
+        $data = service::where('id', '=', $id);
         $data->update([
-        $data->keluhan = $request->keluhan;
-        $data->tgl_masuk = $request->tgl_masuk;
-        $data->tgl_keluar = $request->tgl_keluar;
+            'keluhan' => $request->keluhan,
+            'tgl_masuk' => $request->tgl_masuk,
+            'tgl_keluar' => $request->tgl_keluar,
         ]);
         return redirect('Service');
     }

@@ -60,6 +60,12 @@
                       <p>Kendaraan</p>
                     </a>
                   </li>
+                  <li class="nav-item">
+                    <a href="{{ route('Service.index') }}" class="nav-link {{ request()->routeIs('Service.index') ? 'active' : '' }}">
+                      <i class="nav-icon bi bi-circle"></i>
+                      <p>Service</p>
+                    </a>
+                  </li>
                 </ul>
               </li>
               <li class="nav-item">
