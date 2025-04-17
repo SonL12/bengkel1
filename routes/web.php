@@ -5,6 +5,7 @@ use App\Http\Controllers\JnsKendaraanController;
 use App\Http\Controllers\KendaraanController;
 use App\Http\Controllers\PemilikController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\JnsServiceController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -61,3 +62,11 @@ Route::post('/Service/add', [ServiceController::class, 'store'])->name('Service.
 Route::get('/Service/edit/{id}', [ServiceController::class, 'edit'])->name('Service.edit');
 Route::post('/Service/edit/{id}', [ServiceController::class, 'update'])->name('Service.update');
 Route::get('/Service/delete/{id}', [ServiceController::class, 'destroy'])->name('Service.delete');
+
+//Route JnsService
+Route::get('/JnsService', [JnsServiceController::class, 'index'])->name('JnsService.index');
+Route::get('/JnsService/add', [JnsServiceController::class, 'create'])->name('JnsService.create');
+Route::post('/JnsService/add', [JnsServiceController::class, 'store'])->name('JnsService.store');
+Route::get('/JnsService/edit/{id}', [JnsServiceController::class, 'edit'])->name('JnsService.edit');
+Route::post('/JnsService/edit/{id}', [JnsServiceController::class, 'update'])->name('JnsService.update');
+Route::get('/JnsService/delete/{id}', [JnsServiceController::class, 'destroy'])->name('JnsService.delete');

@@ -71,6 +71,12 @@
                       <i class="nav-icon bi bi-circle"></i>
                       <p>Pemilik</p>
                     </a>
+                    </li>
+                  <li class="nav-item">
+                  <a href="{{ route('JnsService.index') }}" class="nav-link {{ request()->routeIs('JnsService.index') ? 'active' : '' }}">
+                      <i class="nav-icon bi bi-circle"></i>
+                      <p>Jenis Service</p>
+                    </a>
                   </li>
                 </ul>
               </li>
