@@ -40,15 +40,17 @@
                             </div>
                             <!--end::Header-->
                             <!--begin::Form-->
-                            <form action="{{ route('jnsKendaraan.store') }}" method="post">
+                            <form class="needs-validation" action="{{ route('jnsKendaraan.store') }}" method="post" novalidate>
                                 <!--begin::Body-->
                                 @csrf
                                 <div class="card-body">
                                     <div class="mb-3">
                                         <label class="form-label">Nama Jenis Kendaraan</label>
                                         <input type="text" class="form-control" name="nm_jns_kendaraan"
-                                            placeholder="Masukkan Nama Jenis Kendaraan"
-                                        />
+                                            placeholder="Masukkan Nama Jenis Kendaraan" required
+                                            />
+                                            <div class="invalid-feedback">Tolong masukkan nama jenis kendaraannya</div>
+                                        </div>
                                     </div>
                                 </div>
                                 <!--end::Body-->
@@ -59,6 +61,33 @@
                                 <!--end::Footer-->
                             </form>
                             <!--end::Form-->
+                            <!--start::Script Validation-->
+                            <script>
+                                // Example starter JavaScript for disabling form submissions if there are invalid fields
+                                (() => {
+                                    'use strict';
+
+                                    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                                    const forms = document.querySelectorAll('.needs-validation');
+
+                                    // Loop over them and prevent submission
+                                    Array.from(forms).forEach((form) => {
+                                        form.addEventListener(
+                                            'submit',
+                                            (event) => {
+                                                if (!form.checkValidity()) {
+                                                    event.preventDefault();
+                                                    event.stopPropagation();
+                                                }
+
+                                                form.classList.add('was-validated');
+                                            },
+                                            false,
+                                        );
+                                    });
+                                })();
+                            </script>
+                            <!--end::Script Validation-->
                         </div>
                     </div>
                 </div>
