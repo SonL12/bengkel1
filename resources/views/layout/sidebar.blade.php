@@ -60,6 +60,12 @@
                       <p>Kendaraan</p>
                     </a>
                   </li>
+                  <li class="nav-item">
+                    <a href="{{ route('pemilik.index') }}" class="nav-link {{ request()->routeIs('pemilik.index') ? 'active' : '' }}">
+                      <i class="nav-icon bi bi-circle"></i>
+                      <p>Pemilik</p>
+                    </a>
+                  </li>
                 </ul>
               </li>
               <li class="nav-item">
